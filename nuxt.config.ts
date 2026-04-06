@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '~/assets/styles/main.css'
   ],
   app: {
+    baseURL: process.env.NUXT_APP_BASE_URL || '/',
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1.0',

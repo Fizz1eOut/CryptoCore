@@ -1,9 +1,15 @@
-import { fileURLToPath } from 'node:url'
-import { defineConfig } from 'vitest/config'
-import { defineVitestProject } from '@nuxt/test-utils/config'
+import { fileURLToPath } from 'node:url';
+import { defineConfig } from 'vitest/config';
+import { defineVitestProject } from '@nuxt/test-utils/config';
 
 export default defineConfig({
   test: {
+    globals: true,
+    coverage: {
+      provider: 'istanbul',
+      reportsDirectory: 'coverage',
+      reporter: ['text', 'json', 'html'],
+    },
     projects: [
       {
         test: {
@@ -27,4 +33,4 @@ export default defineConfig({
       }),
     ],
   },
-})
+});
