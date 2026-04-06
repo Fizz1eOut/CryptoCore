@@ -1,8 +1,11 @@
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vitest/config';
 import { defineVitestProject } from '@nuxt/test-utils/config';
+import vue from '@vitejs/plugin-vue';
+import { resolve } from 'path';
 
 export default defineConfig({
+  plugins: [vue()],
   test: {
     globals: true,
     coverage: {
@@ -12,10 +15,17 @@ export default defineConfig({
     },
     projects: [
       {
+        plugins: [vue()],
+        resolve: {
+          alias: {
+            '@': resolve(__dirname, 'app'),
+          },
+        },
         test: {
           name: 'unit',
-          include: ['test/unit/*.{test,spec}.ts'],
-          environment: 'node',
+          include: ['**/*.{test,spec}.{ts,js}'],
+          exclude: ['test/nuxt/**', '**/node_modules/**'],
+          environment: 'happy-dom',
         },
       },
       await defineVitestProject({
