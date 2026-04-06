@@ -3,8 +3,24 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/eslint', '@nuxt/test-utils/module'],
   css: [
-    '~/assets/styles/main.css',
-    '~/assets/styles/theme.css'
-  ]
+    '~/assets/styles/tokens.css',
+    '~/assets/styles/theme.css',
+    '~/assets/styles/main.css'
+  ],
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1.0',
+      title: 'CryptoCore',
+      link: [
+        { rel: 'icon', href: '/favicon.ico' },
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap'
+        }
+      ]
+    }
+  }
 });
-
