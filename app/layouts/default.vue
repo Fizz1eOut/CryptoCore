@@ -5,7 +5,9 @@
     </header>
 
     <main>
-      <slot /> 
+      <BaseAppContainer>
+        <slot />
+      </BaseAppContainer>
     </main>
 
     <footer>
