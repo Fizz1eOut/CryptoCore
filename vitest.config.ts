@@ -3,6 +3,7 @@ import { defineConfig } from 'vitest/config';
 import { defineVitestProject } from '@nuxt/test-utils/config';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
+import AutoImport from 'unplugin-auto-import/vite';
 
 export default defineConfig({
   plugins: [vue()],
@@ -15,7 +16,13 @@ export default defineConfig({
     },
     projects: [
       {
-        plugins: [vue()],
+        plugins: [
+          vue(),
+          AutoImport({
+            imports: ['vue'],
+            dts: false,
+          }),
+        ],
         resolve: {
           alias: {
             '@': resolve(__dirname, 'app'),
