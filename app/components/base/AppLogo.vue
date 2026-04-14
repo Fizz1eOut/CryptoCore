@@ -1,5 +1,7 @@
 <template>
   <div class="logo">
-    <img :src="'/images/logo.png'" alt="logo" >
+    <NuxtLink to="/">
+      <img :src="'/images/logo.png'" alt="logo" >
+    </NuxtLink>  
   </div>
 </template>
