@@ -23,5 +23,12 @@ export default defineNuxtConfig({
         }
       ]
     }
+  },
+  vite: {
+    plugins: [
+      (await import('vite-svg-loader')).default({
+        svgo: false
+      })
+    ]
   }
 });
