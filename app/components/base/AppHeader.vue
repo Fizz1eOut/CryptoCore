@@ -45,6 +45,15 @@
     width: 100%;
     gap: 20px;
   }
+  .header__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 700px;
+    width: 100%;
+  }
+  @media (max-width: 768px) {
   .header__logo {
     position: relative;
     z-index: 10;
@@ -53,12 +62,5 @@
     gap: 10px;
     width: 100%;
   }
-  .header__nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    max-width: 700px;
-    width: 100%;
   }
 </style>  
